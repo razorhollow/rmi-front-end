@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
+import LogoBar from '../LogoBar/LogoBar'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
     <>
+      <LogoBar />
       {user ?
         <nav>
           <ul>
