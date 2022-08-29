@@ -6,7 +6,10 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
 import * as authService from './services/authService'
+import theme from './components/ui/Theme'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -23,7 +26,8 @@ const App = () => {
   }
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -50,7 +54,7 @@ const App = () => {
           }
         />
       </Routes>
-    </>
+    </ThemeProvider>
   )
 }
 

@@ -1,7 +1,13 @@
-
 const LogoBar = () => {
   return (
-    <div>LogoBar</div>
+    <div className="container">
+      <div>
+        Reynolds Manufacturing, Inc. | LARGE SHOP CAPABILITY. SMALL SHOP FEEL
+      </div>
+      <div>
+        <a href="http://"></a>
+      </div>
+    </div>
   )
 }
 
