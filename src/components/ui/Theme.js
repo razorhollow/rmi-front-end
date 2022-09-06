@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles'
 
-const arcBlue = "0B7289"
-const arcOrange = "FFBA60"
+const arcBlue = "#0B7289"
+const arcOrange = "#FFBA60"
 
 export default createTheme({
   palette: {

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
+import ResponsiveAppBar from './components/NavBar/AppBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
@@ -29,6 +30,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NavBar user={user} handleLogout={handleLogout} />
+      <ResponsiveAppBar />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
