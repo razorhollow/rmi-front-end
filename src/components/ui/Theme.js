@@ -1,19 +1,33 @@
+import { ThemeContext } from '@emotion/react'
 import { createTheme } from '@mui/material/styles'
 
-const arcBlue = "#0B7289"
-const arcOrange = "#FFBA60"
+const blueJeans= "#00aaffff"
+const corn= "#e7e247ff"
+const blackOlive= "#3d3b30ff"
+const independence= "#4d5061ff"
+const beige= "#e9eddeff"
 
 export default createTheme({
   palette: {
     common: {
-      blue: `${arcBlue}`,
-      arcOrange: `${arcOrange}`
+      blue: `${blueJeans}`,
+      yellow: `${corn}`
     },
     primary: {
-      main: `${arcBlue}`
+      main: `${blueJeans}`
     },
     secondary: {
-      main: `${arcOrange}`
+      main: `${corn}`
+    }
+  },
+  overrides: {
+    Button: {
+      contained: {
+        color: 'white',
+      }
     }
   }
 })
+
+
+

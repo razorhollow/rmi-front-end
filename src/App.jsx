@@ -12,6 +12,19 @@ import CssBaseline from '@mui/material/CssBaseline'
 import * as authService from './services/authService'
 import theme from './components/ui/Theme'
 
+theme.typography.h1={
+  fontSize: '7rem',
+  '@media (max-width:600px)': {
+    fontSize: '3rem',
+  }
+}
+
+theme.typography.body1={
+  '@media (max-width:600px)': {
+    lineHeight: '1.5rem',
+  }
+}
+
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
@@ -29,8 +42,8 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <NavBar user={user} handleLogout={handleLogout} />
-      <ResponsiveAppBar />
+      {/* <NavBar user={user} handleLogout={handleLogout} /> */}
+      <ResponsiveAppBar user={user}/>
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
