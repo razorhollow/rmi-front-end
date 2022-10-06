@@ -6,6 +6,7 @@ import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
+import CapabilityDetails from './pages/CapabilityDetails/CapabilityDetails'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -68,6 +69,8 @@ const App = () => {
             )
           }
         />
+        <Route
+          path="/:capabilityUrl" element={<CapabilityDetails />}/>
       </Routes>
     </ThemeProvider>
   )
