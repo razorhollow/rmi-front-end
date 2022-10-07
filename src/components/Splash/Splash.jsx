@@ -6,7 +6,7 @@ import styles from './Splash.module.css'
 const Splash = () => {
   return (
     <>
-      <Box sx={{width: "90%", py: "15rem"}}>
+      <Box sx={{width: "90%", py: "8rem"}}>
         {/* <Paper sx={{pb: 5, px: 3}}> */}
           <Box  direction='row' sx={{display: "flex"}} justifyContent="space-between">
             <Box sx={{width: "50%", zIndex: "2"}}>
