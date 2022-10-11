@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
 export default function CapabilitiesButton({ capabilityData }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -35,7 +36,14 @@ export default function CapabilitiesButton({ capabilityData }) {
         }}
       >
         {capabilityData.map((capability, idx) => 
-          <MenuItem onClick={handleClose} key={idx}>{capability.title}</MenuItem>
+          <MenuItem 
+            onClick={handleClose} 
+            key={idx}
+            component={Link}
+            to={`/${capability.url}`}
+          >
+            {capability.title}
+          </MenuItem>
         )}
       </Menu>
     </div>
