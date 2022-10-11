@@ -3,7 +3,7 @@
     font-size: 2rem;
   }
 
-  img {
+  .mobile-hide {
     display: none;
   }
 }

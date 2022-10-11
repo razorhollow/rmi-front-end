@@ -15,7 +15,7 @@ const Splash = () => {
               <Button variant="contained" sx={{width: '15rem', color: '#FFF'}}><CloudUploadIcon sx={{mr: 2}}/>Start Your Quote</Button>
             </Box>
             <Box sx={{ width: "35%", overflow: "hidden"}}>
-              <img src="./lathe.svg" style={{height: "100%", width: "auto"}} className="mobile-hide"/>
+              <img src="./lathe.svg" style={{height: "100%", width: "auto"}} className="mobile-hide" alt="factory"/>
             </Box>
           </Box>
         {/* </Paper> */}

@@ -13,11 +13,12 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import FactoryIcon from '@mui/icons-material/Factory';
+import CapabilitiesButton from '../CapabilitiesButton/CapabilitiesButton';
 
-const pages = ['Solutions', 'Schedule A Visit', 'Get A Quote'];
+const pages = ['Schedule A Visit', 'Get A Quote'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const ResponsiveAppBar = ({ user }) => {
+const ResponsiveAppBar = ({ user, handleLogout, capabilityData }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -31,11 +32,11 @@ const ResponsiveAppBar = ({ user }) => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
+  
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -58,6 +59,7 @@ const ResponsiveAppBar = ({ user }) => {
           >
             RMI
           </Typography>
+            <CapabilitiesButton />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -147,14 +149,15 @@ const ResponsiveAppBar = ({ user }) => {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
-            >
+              >
               {user ? (
-                <MenuItem key="logout" component={Link} to="/logout">Logout</MenuItem>
+                <MenuItem key="logout" component={Link} to="/" onClick={handleLogout}>Logout</MenuItem>
                ) : (
-                <MenuItem>Login</MenuItem>
+                <MenuItem component={Link} to='/login'>Login</MenuItem>
               )}
             </Menu>
           </Box>
+            {user ? <Typography variant='body1' sx={{textTransform: 'capitalize', paddingLeft: '1em' }}>Welcome {user.name}</Typography> : ""}
         </Toolbar>
       </Container>
     </AppBar>

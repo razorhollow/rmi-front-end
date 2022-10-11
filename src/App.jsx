@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
-import NavBar from './components/NavBar/NavBar'
 import ResponsiveAppBar from './components/NavBar/AppBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
@@ -12,6 +11,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import * as authService from './services/authService'
 import theme from './components/ui/Theme'
+import capabilities from './components/Carousel/capabilities.js'
 
 theme.typography.h1={
   fontSize: '7rem',
@@ -28,6 +28,7 @@ theme.typography.body1={
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [capabilityData, setCapabilityData] = useState(capabilities)
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -44,7 +45,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {/* <NavBar user={user} handleLogout={handleLogout} /> */}
-      <ResponsiveAppBar user={user}/>
+      <ResponsiveAppBar user={user} handleLogout={handleLogout} capabilityData={capabilityData}/>
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
