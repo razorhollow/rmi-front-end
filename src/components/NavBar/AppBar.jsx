@@ -59,7 +59,7 @@ const ResponsiveAppBar = ({ user, handleLogout, capabilityData }) => {
           >
             RMI
           </Typography>
-            <CapabilitiesButton />
+          <CapabilitiesButton capabilityData={capabilityData}/>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -152,7 +152,7 @@ const ResponsiveAppBar = ({ user, handleLogout, capabilityData }) => {
               >
               {user ? (
                 <MenuItem key="logout" component={Link} to="/" onClick={handleLogout}>Logout</MenuItem>
-               ) : (
+              ) : (
                 <MenuItem component={Link} to='/login'>Login</MenuItem>
               )}
             </Menu>

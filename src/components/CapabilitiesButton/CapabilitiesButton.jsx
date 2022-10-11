@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-export default function CapabilitiesButton() {
+export default function CapabilitiesButton({ capabilityData }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -34,9 +34,9 @@ export default function CapabilitiesButton() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>CNC Machining</MenuItem>
-        <MenuItem onClick={handleClose}>Fabrication</MenuItem>
-        <MenuItem onClick={handleClose}>Laser Cutting</MenuItem>
+        {capabilityData.map((capability, idx) => 
+          <MenuItem onClick={handleClose} key={idx}>{capability.title}</MenuItem>
+        )}
       </Menu>
     </div>
   );
