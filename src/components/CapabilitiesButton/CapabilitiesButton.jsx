@@ -41,6 +41,7 @@ export default function CapabilitiesButton({ capabilityData }) {
             key={idx}
             component={Link}
             to={`/${capability.url}`}
+            state={capability}
           >
             {capability.title}
           </MenuItem>
